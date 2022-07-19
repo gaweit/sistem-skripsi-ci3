@@ -101,24 +101,30 @@ class Cetak extends CI_Controller {
 		$mhs = $this->M_data->find('users', $where,'', '', 'jurusan', 'jurusan.IDJurusan = users.IDJUrusanUser', 'konsentrasi', 'konsentrasi.IDKonsentrasi = users.IDKonsentrasiUser');
 		$pdf = new Pdf('P','mm','A4');
 		$pdf->AddPage();
-		$pdf->SetFont('Times', 'BU', 12);
-		$pdf->Cell(0, 0, 'KARTU KONSULTASI', 0,0,'C');
+		$pdf->SetFont('Times', 'B', 12); 
+		$pdf->Cell(0, 0, 'YAYASAN PENDIDIKAN DHARMA ANDALAS ', 0,0,'C');
+		$pdf->ln(5);
+		$pdf->Cell(0, 0, 'UNIVERSITAS DHARMA ANDALAS ', 0,0,'C');
+		$pdf->ln(5);
+		$pdf->Cell(0, 0, 'UNTUK KECERDASAN BANGSA ', 0,0,'C');
+		$pdf->ln(10);
+		$pdf->Cell(0, 0, 'DOKUMENTASI BIMBINGAN SKRIPSI', 0,0,'C');
 		$pdf->ln(10);
 		$pdf->SetFont('Times', '', 12);
 		foreach ($mhs->result() as $m) {
-			$pdf->Cell(30, 5, 'Nama', 0,0,'L');
+			$pdf->Cell(30, 5, 'NAMA', 0,0,'L');
 			$pdf->Cell(0, 5, ': '.$m->Nama, 0,0,'L');	
 			$pdf->ln(7);
 			$pdf->Cell(30, 5, 'NIM', 0,0,'L');
 			$pdf->Cell(0, 5, ': '.$m->ID, 0,0,'L');
 			$pdf->ln(7);
-			$pdf->Cell(30, 5, 'Jurusan', 0,0,'L');
+			$pdf->Cell(30, 5, 'FAKULTAS', 0,0,'L');
 			$pdf->Cell(0, 5, ': '.$m->Jurusan, 0,'J');
 			$pdf->ln(7);       
-			$pdf->Cell(30, 5, 'Konsentrasi', 0,0,'L');
+			$pdf->Cell(30, 5, 'PRODI', 0,0,'L');
 			$pdf->Cell(0, 5, ': '.$m->Konsentrasi, 0,'J');
 			$pdf->ln(7);
-			$pdf->Cell(30, 5, 'Judul', 0,0,'L');
+			$pdf->Cell(30, 5, 'JUDUL', 0,0,'L');
 			foreach ($skripsi->result() as $s) {
 				$pdf->MultiCell(0, 5, ': '.$s->JudulSkripsi
 					, 0,'J');
@@ -133,8 +139,8 @@ class Cetak extends CI_Controller {
 
 			$pdf->Cell(10,7,'No',1);		
 			$pdf->Cell(45,7,'Tanggal', 1);
-			$pdf->Cell(70,7,'Catatan', 1);
-			$pdf->Cell(65,7,'Pembimbing', 1);
+			$pdf->Cell(70,7,'Progres', 1);
+			$pdf->Cell(65,7,'Tanda Tangan', 1);
 			$pdf->Ln();
 			$no = 1;
 			$pdf->SetWidths(array(10,45,70,65));
@@ -148,16 +154,19 @@ class Cetak extends CI_Controller {
 		}
 
 
-		$pdf->Cell(120, 0, '', 0,0,'L');
-		$pdf->Cell(0, 35, 'Brebes, '.date_indo(date('Y-m-d')), 0,2,'L');
+		$pdf->Cell(111, 0, '', 0,0,'L');
+		$pdf->Cell(0, 35, 'UNIVERSITAS DHARMA ANDALAS ', 0,0,'R');
+		$pdf->ln(5);
+		$pdf->Cell(0, 35, 'Padang, '.date_indo(date('Y-m-d')), 0,2,'R');
 
 		foreach ($mhs->result() as $k) {
 			$where = array('IDKonsentrasi' => $k->IDKonsentrasiUser);
 			$jurusan = $this->M_data->find('konsentrasi', $where,  '', '', 'users', 'users.ID = konsentrasi.IDDosen', 'jurusan', 'jurusan.IDJurusan = konsentrasi.IDJurusanKsn');	
 		}
 		foreach ($jurusan->result() as $j) {
-			$pdf->Cell(0, 9, $j->Nama, 0,2,'L');
-			$pdf->Cell(0, 0, 'Ka. Prodi '.$j->Jurusan.' '.$j->Konsentrasi, 0,2,'L');
+			$pdf->Cell(0, 9, $j->Nama, 0,2,'R');
+			$pdf->Cell(0, 0, 'Ka. Prodi '.$j->Konsentrasi, 0,2,'R');
+			// $pdf->Cell(0, 0, 'Ka. Prodi '.$j->Jurusan.' '.$j->Konsentrasi, 0,2,'L');
 		}
 		$pdf->Output();
 	}

@@ -82,7 +82,7 @@
 				</div>
 		<div class="form-group">
 			<div class=" float-right">
-				<a href="<?php echo base_url('Cetak/kartu/').$this->session->userdata('ID');?>"> <button class="btn btn-outline-primary btn-sm"> <i class="fas fa-print"> </i> Cetak </button> </a>	
+				<a href="<?php echo base_url('Cetak/kartu/').$this->session->userdata('ID');?>"> <button class="btn btn-outline-primary btn-sm"> <i class="fas fa-print"> </i> Cetak Riwayar Bimbingan </button> </a>	
 			</div>
 		</div>
 	</div>
