@@ -18,8 +18,8 @@
 				<table class="table">
 					<thead>
 						<tr>
-							<th scope="col">ID Jurusan</th>
-							<th scope="col">Jurusan</th>
+							<th scope="col">ID Fakultas</th>
+							<th scope="col">Fakultas</th>
 							<th><i class="fas fa-spinner fa-pulse loading" style="display: none"> </i> 
 							</th>
 						</tr>

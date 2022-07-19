@@ -94,8 +94,8 @@
 				<tr>
 					<th scope="col" class='w-auto'><?= $users->row()->Status === 'Dosen' ? "NIDN" : "NIM" ?></th>
 					<th scope="col" class="w-auto">Nama</th>
-					<th scope="col">Jurusan</th>
-					<th scope="col">Konsentrasi</th>
+					<th scope="col">Fakultas</th>
+					<th scope="col">Prodi</th>
 					<th scope="col">Email</th>
 					<th scope="col">No HP</th>
 					<th>Status</th>

@@ -121,7 +121,7 @@
 						<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 							<div class="form-row">
 								<div class="form-group col-md">
-									<button id="btn_jrsn" class="btn btn-sm btn-primary col text-left"> <i class="fas fa-user-plus"></i> Jurusan </button>								
+									<button id="btn_jrsn" class="btn btn-sm btn-primary col text-left"> <i class="fas fa-user-plus"></i> Fakultas </button>								
 								</div>
 
 								<div id="form_jurusan" class="col-md-9" style="display: none">
@@ -130,7 +130,7 @@
 							</div>
 							<div class="form-row">
 								<div class="form-group col-md">
-									<button id="btn_konsentrasi" class="btn btn-primary btn-sm col text-left"> <i class="fas fa-user-plus"></i> Konsentrasi </button>
+									<button id="btn_konsentrasi" class="btn btn-primary btn-sm col text-left"> <i class="fas fa-user-plus"></i> Prodi </button>
 								</div>
 
 								<div class="col-md-9" id="form_konsentrasi" style="display: none">

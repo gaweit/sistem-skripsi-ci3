@@ -24,14 +24,14 @@
     <div class="form-row align-items-center mb-4">
       <div class="col-md mb-2">
         <label class="sr-only" for="inlineFormInput">ID Konsentrasi</label>
-        <input min="0" type="number" class="form-control mb-s4 form-control-sm" placeholder="ID Konsentrasi" name="id" required>
+        <input min="0" type="number" class="form-control mb-s4 form-control-sm" placeholder="ID Prodi" name="id" required>
       </div>
       <div class="col-md mb-2">
-        <input type="text" name="konsentrasi" class="form-control form-control-sm" id="inlineFormInputGroup" placeholder="Konsentrasi" required>
+        <input type="text" name="konsentrasi" class="form-control form-control-sm" id="inlineFormInputGroup" placeholder="Prodi" required>
       </div>
       <div class="col-md col">
         <select name="id_jurusan" class="custom-select mr-sm-2 form-control-sm" id="jrsn">
-          <option selected>Jurusan</option>
+          <option selected>Fakultas</option>
           <?php foreach ($jurusan->result() as $j) { ?>  
             <option value="<?= $j->IDJurusan;?>"><?= $j->Jurusan;?></option>
           <?php } ?>
