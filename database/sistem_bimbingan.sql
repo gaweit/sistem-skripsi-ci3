@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 21, 2021 at 11:38 AM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 5.6.39
+-- Generation Time: 19 Jul 2022 pada 08.07
+-- Versi Server: 10.1.29-MariaDB
+-- PHP Version: 7.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `sistemskripsi2`
+-- Database: `sistem_bimbingan`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Struktur dari tabel `admin`
 --
 
 CREATE TABLE `admin` (
@@ -35,7 +35,7 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `admin`
+-- Dumping data untuk tabel `admin`
 --
 
 INSERT INTO `admin` (`id_admin`, `username`, `Password`) VALUES
@@ -44,7 +44,7 @@ INSERT INTO `admin` (`id_admin`, `username`, `Password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ideskripsi`
+-- Struktur dari tabel `ideskripsi`
 --
 
 CREATE TABLE `ideskripsi` (
@@ -58,7 +58,7 @@ CREATE TABLE `ideskripsi` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jurusan`
+-- Struktur dari tabel `jurusan`
 --
 
 CREATE TABLE `jurusan` (
@@ -67,7 +67,7 @@ CREATE TABLE `jurusan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `jurusan`
+-- Dumping data untuk tabel `jurusan`
 --
 
 INSERT INTO `jurusan` (`IDJurusan`, `Jurusan`) VALUES
@@ -78,7 +78,7 @@ INSERT INTO `jurusan` (`IDJurusan`, `Jurusan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kartubimbingan`
+-- Struktur dari tabel `kartubimbingan`
 --
 
 CREATE TABLE `kartubimbingan` (
@@ -89,10 +89,18 @@ CREATE TABLE `kartubimbingan` (
   `TanggalBimbingan` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data untuk tabel `kartubimbingan`
+--
+
+INSERT INTO `kartubimbingan` (`IDKartu`, `IDKartuMahasiswa`, `IDDosenPembimbing`, `Catatan`, `TanggalBimbingan`) VALUES
+(1, 12345, '100', 'coba kirim bab 1 dulu ya\r\ndan di file ini sudah ada revisian dari sya yg harus kamu perbaiki', '2022-07-19'),
+(2, 12345, '100', 'bab 1 oke , lanjut bab 2 ya', '2022-07-19');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kegiatan`
+-- Struktur dari tabel `kegiatan`
 --
 
 CREATE TABLE `kegiatan` (
@@ -108,7 +116,7 @@ CREATE TABLE `kegiatan` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `konsentrasi`
+-- Struktur dari tabel `konsentrasi`
 --
 
 CREATE TABLE `konsentrasi` (
@@ -119,17 +127,17 @@ CREATE TABLE `konsentrasi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `konsentrasi`
+-- Dumping data untuk tabel `konsentrasi`
 --
 
 INSERT INTO `konsentrasi` (`IDKonsentrasi`, `IDJurusanKsn`, `IDDosen`, `Konsentrasi`) VALUES
 (1, 1, 100, 'Kecerdasan  Buatan'),
-(2, 1, 0, 'Robotic');
+(2, 1, 103, 'Robotic');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `notifikasi`
+-- Struktur dari tabel `notifikasi`
 --
 
 CREATE TABLE `notifikasi` (
@@ -143,7 +151,7 @@ CREATE TABLE `notifikasi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `notifikasi`
+-- Dumping data untuk tabel `notifikasi`
 --
 
 INSERT INTO `notifikasi` (`IDNotifikasi`, `Notifikasi`, `Catatan`, `TanggalNotifikasi`, `IDPenerima`, `IDPengirim`, `StatusNotifikasi`) VALUES
@@ -158,7 +166,7 @@ INSERT INTO `notifikasi` (`IDNotifikasi`, `Notifikasi`, `Catatan`, `TanggalNotif
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pembimbing`
+-- Struktur dari tabel `pembimbing`
 --
 
 CREATE TABLE `pembimbing` (
@@ -171,7 +179,7 @@ CREATE TABLE `pembimbing` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pembimbing`
+-- Dumping data untuk tabel `pembimbing`
 --
 
 INSERT INTO `pembimbing` (`IDPembimbing`, `IDDosenPmb`, `IDSkripsiPmb`, `StatusProposal`, `StatusSkripsi`, `StatusPembimbing`) VALUES
@@ -181,7 +189,7 @@ INSERT INTO `pembimbing` (`IDPembimbing`, `IDDosenPmb`, `IDSkripsiPmb`, `StatusP
 -- --------------------------------------------------------
 
 --
--- Table structure for table `skripsi`
+-- Struktur dari tabel `skripsi`
 --
 
 CREATE TABLE `skripsi` (
@@ -198,16 +206,16 @@ CREATE TABLE `skripsi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `skripsi`
+-- Dumping data untuk tabel `skripsi`
 --
 
 INSERT INTO `skripsi` (`IDSkripsi`, `IDMahasiswaSkripsi`, `JudulSkripsi`, `QRCode`, `FileProposal`, `FileSkripsi`, `Uploader`, `Deskripsi`, `Tanggal`, `Nilai`) VALUES
-(1596017627, 12345, 'Deteksi Objek', '12345.png', '1596017627.pdf', '1596017627.pdf', 12345, 'Perancangan pendeteksi objek manusia ketika menyebrang di jalan raya sehingga rambu-rambu lalu lintas menyalakan lampu bahwa akan ada orang yang sedang menyebrang di tikungan.\r\nPerancangan pendeteksi objek manusia ketika menyebrang di jalan raya sehingga rambu-rambu lalu lintas menyalakan lampu bahwa akan ada orang yang sedang menyebrang di tikungan.\r\nPerancangan pendeteksi objek manusia ketika menyebrang di jalan raya sehingga rambu-rambu lalu lintas menyalakan lampu bahwa akan ada orang yang sedang menyebrang di tikungan.\r\nPerancangan pendeteksi objek manusia ketika menyebrang di jalan raya sehingga rambu-rambu lalu lintas menyalakan lampu bahwa akan ada orang yang sedang menyebrang di tikungan.\r\nPerancangan pendeteksi objek manusia ketika menyebrang di jalan raya sehingga rambu-rambu lalu lintas menyalakan lampu bahwa akan ada orang yang sedang menyebrang di tikungan.', '2020-07-29', 0);
+(1596017627, 12345, 'Deteksi Objek', '12345.png', '1596017627.pdf', '12345.pdf', 100, 'Perancangan pendeteksi objek manusia ketika menyebrang di jalan raya sehingga rambu-rambu lalu lintas menyalakan lampu bahwa akan ada orang yang sedang menyebrang di tikungan.\r\nPerancangan pendeteksi objek manusia ketika menyebrang di jalan raya sehingga rambu-rambu lalu lintas menyalakan lampu bahwa akan ada orang yang sedang menyebrang di tikungan.\r\nPerancangan pendeteksi objek manusia ketika menyebrang di jalan raya sehingga rambu-rambu lalu lintas menyalakan lampu bahwa akan ada orang yang sedang menyebrang di tikungan.\r\nPerancangan pendeteksi objek manusia ketika menyebrang di jalan raya sehingga rambu-rambu lalu lintas menyalakan lampu bahwa akan ada orang yang sedang menyebrang di tikungan.\r\nPerancangan pendeteksi objek manusia ketika menyebrang di jalan raya sehingga rambu-rambu lalu lintas menyalakan lampu bahwa akan ada orang yang sedang menyebrang di tikungan.', '2020-07-29', 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Struktur dari tabel `users`
 --
 
 CREATE TABLE `users` (
@@ -223,17 +231,17 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `users`
+-- Dumping data untuk tabel `users`
 --
 
 INSERT INTO `users` (`ID`, `Nama`, `Password`, `IDJurusanUser`, `IDKonsentrasiUser`, `NoHP`, `Email`, `Foto`, `Status`) VALUES
 (100, 'Hartono', '827ccb0eea8a706c4c34a16891f84e7b', 1, 1, '', 'hartono@gmail.com', '', 'Dosen'),
 (101, 'Ridwan', '827ccb0eea8a706c4c34a16891f84e7b', 1, 2, '', 'ridwan101@yahoo.com', '', 'Dosen'),
 (102, 'Permana', '827ccb0eea8a706c4c34a16891f84e7b', 1, 2, '', 'permana102@gmail.com', '', 'Dosen'),
-(103, 'Lisnawati', '827ccb0eea8a706c4c34a16891f84e7b', 1, 1, '', 'lisna@outlook.com', '', 'Dosen'),
-(12345, 'Yoga', '827ccb0eea8a706c4c34a16891f84e7b', 1, 1, '089707865', 'nama@gmail.com', '12345.jpg', 'Skripsi'),
+(103, 'Lisnawati', '827ccb0eea8a706c4c34a16891f84e7b', 1, 2, '', 'lisna@outlook.com', '', 'Dosen'),
+(12345, 'Yoga', '827ccb0eea8a706c4c34a16891f84e7b', 1, 1, '089707865', 'nama@gmail.com', '12345.png', 'Skripsi'),
 (12346, 'Udin', '827ccb0eea8a706c4c34a16891f84e7b', 1, 1, '', 'udin@gmail.com', '', 'Skripsi'),
-(13451, 'Siti', '827ccb0eea8a706c4c34a16891f84e7b', 1, 2, '', 'siti@kampus.ac.id', '', 'Mahasiswa');
+(13451, 'Siti', '827ccb0eea8a706c4c34a16891f84e7b', 1, 2, '', 'siti@kampus.ac.id', '', 'Skripsi');
 
 --
 -- Indexes for dumped tables
@@ -305,7 +313,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `kartubimbingan`
 --
 ALTER TABLE `kartubimbingan`
-  MODIFY `IDKartu` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `IDKartu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `kegiatan`
@@ -332,11 +340,11 @@ ALTER TABLE `pembimbing`
   MODIFY `IDPembimbing` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `skripsi`
+-- Ketidakleluasaan untuk tabel `skripsi`
 --
 ALTER TABLE `skripsi`
   ADD CONSTRAINT `uploader` FOREIGN KEY (`Uploader`) REFERENCES `users` (`ID`);
