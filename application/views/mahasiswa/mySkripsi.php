@@ -52,24 +52,26 @@
 						echo "";
 					} else {
 						echo "href=".base_url("ControllerGlobal/downloadFile/Proposal/".$proposal);
-					} ?>> <i class="fa fa-download"></i> KRS </a>
+					} ?>> <i class="fa fa-download"></i> File Proposal Skripsi </a>
 
 					<a class="card-body" <?php if (empty($skripsi)) {
 						echo "";
 					} else {
 						echo "href=".base_url("ControllerGlobal/downloadFile/Skripsi/".$skripsi);
-					} ?>> <i class="fa fa-download"></i> Bimbingan </a>
+					} ?>> <i class="fa fa-download"></i> File Bimbingan Skripsi </a>
 
 				</div>
 				
 			</div>
 		</div>
+		<br>
+		<hr>
 		<div class="form-group mr-3">
 					<form method="post" id="mydata" action="<?php echo base_url('Mahasiswa/uploadData/'.$sesi.'/'.$s->IDSkripsi);?>" enctype="multipart/form-data">
 						<div class="input-group">
 							<div class="custom-file">
 								<input id="upload" type="file" name="<?= $sesi ?>" class="custom-file-input col custom-file-control" required>
-								<label class="custom-file-label">Upload KRS</label>					
+								<label class="custom-file-label">Upload Pengajuan / Skripsi</label>					
 							</div>
 							<div class="input-group-append"> 
 								<button class="btn btn-outline-primary" type="submit"> Upload </button>					
@@ -90,8 +92,8 @@
 			<thead class="small">
 				<tr>
 					<th> Nama </th>
-					<th class="text-center"> KRS </th>
-					<th class="text-center">Bimbingan</th>
+					<th class="text-center"> Pengajuan Judul Skripsi </th>
+					<th class="text-center">Bimbingan Skripsi</th>
 					<th >Status Pembimbing</th>
 				</tr>
 			</thead>
