@@ -1,0 +1,15 @@
+akses admin 
+username & password : admin
+
+akses Dosen
+username : (NIDN yang di input oleh admin)
+pasword : 12345
+
+akses mahasiswa
+username : (NIM yang di input oleh admin)
+password : 12345
+
+alur sistem : 
+admin melem=ngkapi data yang ada di dalam aplikasi
+sperti jurusan, konsentrasi, data mahasiswa,dan data dosen .
+lalu mahasiswa akses dan mengajukan proposal,jika di acc oleh dosen maka lanjut ketahap bimbingan sampai fix di acc oleh dosen.
