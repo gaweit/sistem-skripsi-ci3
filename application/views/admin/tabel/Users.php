@@ -155,7 +155,11 @@
 		<div class="close">
 			<i class="fas fa-info"> </i>
 		</div>
-		Password Default Untuk Setiap Pengguna Adalah 12345, Jika Ingin Mengirim Password Ke Setiap Mahasiswa Klik Bagian Nama Pengguna Untuk Mengirim Password Fitur Tersebut Membutuhkan Settingan SMPTP
+		Password Default Untuk Setiap Pengguna Adalah <b>12345</b><br>
+		 Klik Kanan <b>open new tab</b> Pada Bagian Nama Pengguna Untuk Mengirim Password Kepada Mahasiswa <br>
+		 Ubah Status <b>Mahasiswa</b> Menjadi <b>Skripsi</b><br>
+		 Klik Kanan <b>open new tab</b> Pada Bagian Status Mahasiswa <br>
+
 	</div>
 
 
