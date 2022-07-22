@@ -88,11 +88,23 @@
 		<form id="form-login" action="<?=base_url('Home/session');?>" method="POST" style="vertical-align: middle; display: table-cell; ">
 			<div class="card card-body">
 				<h6> SI | Bimbingan Online</h6>
-				<img width="100%" src="assets/web/logo-andalas.png"> <hr>
+				<center><img width="50%" src="assets/web/logo-andalas.png"></center> <hr>
 				<input name="nim" id="nim" type="text" class="form-control form-group" placeholder="username">
 				<input name="password" id="password" type="password" class="form-control form-group" placeholder="password">
 				
 					<small align="center" class="form-text text-muted mb-3"> username dan password diberikan melalui email masing masing yang telah diisi mahasiswa silahkan ajukan form ke fakultas  </small>
+					<center>
+						<p><b>Akun Demo</b></p>
+					<span><b>Admin</b></span>
+					<p>Username : admin</p>
+					<p>password : admin</p>
+					<span><b>Dosen</b></span>
+					<p>Username : Nip</p>
+					<p>password : 12345</p>
+					<span><b>Mahasiswa</b></span>
+					<p>Username : Nim</p>
+					<p>password : 12345</p>
+					</center>
 				<button id='btn-login' type="submit" class="btn btn-primary">Login</button>
 			</div>
 		</form>
