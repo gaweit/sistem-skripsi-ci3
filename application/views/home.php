@@ -92,8 +92,12 @@
 				<input name="nim" id="nim" type="text" class="form-control form-group" placeholder="username">
 				<input name="password" id="password" type="password" class="form-control form-group" placeholder="password">
 				
-					<small align="center" class="form-text text-muted mb-3"> username dan password diberikan melalui email masing masing yang telah diisi mahasiswa silahkan ajukan form ke fakultas  </small>
+					<small align="center" class="form-text text-muted mb-3"> username dan password diberikan melalui email masing masing yang telah diisi mahasiswa silahkan ajukan form ke fakultas  </small> 
+				<button id='btn-login' type="submit" class="btn btn-primary">Login</button>
 					<center>
+						<hr>
+						<a target="blank" href="assets/panduan/panduan.pdf">Download Panduan</a>
+						<hr>
 						<p><b>Akun Demo</b></p>
 					<span><b>Admin</b></span>
 					<p>Username : admin</p>
@@ -105,7 +109,6 @@
 					<p>Username : Nim</p>
 					<p>password : 12345</p>
 					</center>
-				<button id='btn-login' type="submit" class="btn btn-primary">Login</button>
 			</div>
 		</form>
 	</div>
